@@ -1,0 +1,44 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{4e3e9f9e-fed4-45ca-92af-1d58dd894228}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Projects Include="GoliathTAClient.dproj" />
+    <Projects Include="GoliathTAServer.dproj" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+<BorlandProject xmlns=""><Default.Personality></Default.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="GoliathTAServer">
+    <MSBuild Projects="GoliathTAServer.dproj" Targets="" />
+  </Target>
+  <Target Name="GoliathTAServer:Clean">
+    <MSBuild Projects="GoliathTAServer.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="GoliathTAServer:Make">
+    <MSBuild Projects="GoliathTAServer.dproj" Targets="Make" />
+  </Target>
+  <Target Name="GoliathTAClient">
+    <MSBuild Projects="GoliathTAClient.dproj" Targets="" />
+  </Target>
+  <Target Name="GoliathTAClient:Clean">
+    <MSBuild Projects="GoliathTAClient.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="GoliathTAClient:Make">
+    <MSBuild Projects="GoliathTAClient.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="GoliathTAServer;GoliathTAClient" />
+  </Target>
+  <Target Name="Clean">
+    <CallTarget Targets="GoliathTAServer:Clean;GoliathTAClient:Clean" />
+  </Target>
+  <Target Name="Make">
+    <CallTarget Targets="GoliathTAServer:Make;GoliathTAClient:Make" />
+  </Target>
+  <Import Condition="Exists('$(MSBuildBinPath)\Borland.Group.Targets')" Project="$(MSBuildBinPath)\Borland.Group.Targets" />
+</Project>

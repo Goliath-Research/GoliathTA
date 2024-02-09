@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <PersonalityInfo>
+    <Option>
+      <Option Name="Personality">Default.Personality</Option>
+      <Option Name="ProjectType"></Option>
+      <Option Name="Version">1.0</Option>
+      <Option Name="GUID">{FE3A9EEB-8ACA-4CC6-930D-438861A4753C}</Option>
+    </Option>
+  </PersonalityInfo>
+  <Default.Personality>
+    <Projects>
+      <Projects Name="GoliathTAProject.exe">GoliathTAProject.bdsproj</Projects>
+      <Projects Name="GoliathTAProjectClient.exe">GoliathTAProjectClient.bdsproj</Projects>
+      <Projects Name="Targets">GoliathTAProject.exe GoliathTAProjectClient.exe</Projects>
+    </Projects>
+    <Dependencies/>
+  </Default.Personality>
+</BorlandProject>

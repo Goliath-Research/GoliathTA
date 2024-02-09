@@ -1,0 +1,24 @@
+Contenido:
+  1) GoliathTA.bak : Backup de la base de datos de Goliath T&A
+  2) GoliathTAServer.exe : Servidor a ser instalado en el servidor de aplicaciones
+  3) GoliathTAClient.exe : Cliente del programa a ser instalado por el administrador, Jefe de Recursos Humanos o Jefes de Departamentos
+  4) *.INI : Archivos de configuración de los programas anteriores. Se deben actualizar los datos de conexión con el servidor de bases de datos (GoliathTAServer.ini) o el DNS donde se instala el servidor GoliathTA (GoliathClient.ini).
+  5) GoliathTA - Manual de Usuario : Borrador del Manual de Usuario. No está actualizado hasta las últimas modificaciones de la versión actual del programa.
+  6) spImportEvents.sql : Código del procedimiento almacenado que se ejecuta periódicamente en una tarea de SQL Server para importar los eventos de acceso desde la base BioAdmin. Debe actualizarse el nombre de la base de datos (de ser necesario).
+  7) Job Importar Eventos.sql : Código a ejecutar en el Analizador de Consultas para crear la tarea periódica que sincroniza ambas bases de datos (BioAdmin -> GoliathTA). Debe actualizarse el nombre del servidor SQL Server y credenciales.
+
+Verificación:
+  Una vez instalado todo, cada minuto se ejecutará el procedimiento spImportarEventos de GoliathTA para añadir los eventos de acceso concedido registrados en la base de datos BioAdmin.
+
+Pendientes:
+  1) Terminar de cerrar la versión 1.0 de la Configuración
+  2) Crear una tarea "Departamentos sin Jefe"
+  3) Definir dónde crear Excepciones de horario para usuarios
+  4) Definir dónde "cerrar" la nómina activa
+  5) Terminar la Supervisión Diaria del Jefe de Departamento
+  6) Crear la Supervisión Semanal del Jefe de Departamento
+  7) Crear la Aprobación Final del Jefe de Departamento
+  8) Crear la Supervisión del Jefe de Recursos Humanos a las tareas de los Jefes de Departamentos
+  9) Filtrar las Tareas de acuerdo al operador.
+ 10) Crear reportes con QuantumGrid flexibles y PivotGrid (hipercubos basados en tablas de hechos).
+ 11) Trabajar en la exportación de los resultados de la nómina a SIRH en Oracle...

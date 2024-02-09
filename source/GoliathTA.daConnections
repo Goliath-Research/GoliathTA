@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Connections><PoolingEnabled>True</PoolingEnabled><PoolingBehavior>Wait</PoolingBehavior><MaxPoolSize>10</MaxPoolSize><WaitIntervalSeconds>1</WaitIntervalSeconds><PoolTimeoutSeconds>60</PoolTimeoutSeconds><Definitions><Definition><Name>ADO Connection to GoliathTA</Name><ConnectionString>ADO?AuxDriver=SQLOLEDB.1;Server=SERVER-W2K;Database=GoliathTA;UserID=sa;Password=incognito;Schemas=1;</ConnectionString><Default>True</Default><Description></Description><ConnectionType>MSSQL</ConnectionType></Definition></Definitions></Connections>

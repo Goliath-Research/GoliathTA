@@ -1,0 +1,101 @@
+unit fMunicipio;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ExtCtrls, cxLookAndFeelPainters, StdCtrls, cxButtons, cxLabel,
+  cxControls, cxContainer, cxEdit, cxTextEdit, cxMaskEdit, cxSpinEdit,
+  cxCurrencyEdit, cxDropDownEdit, cxLookupEdit, cxDBLookupEdit,
+  cxDBLookupComboBox, DB, dxmdaset, dxSkinsCore, dxSkinsDefaultPainters,
+  cxGraphics, Menus;
+
+type
+  TfrmMunicipio = class(TForm)
+    pnlBody: TPanel;
+    pnlButtons: TPanel;
+    btnAceptar: TcxButton;
+    btnCancelar: TcxButton;
+    lblNombre: TcxLabel;
+    txtNombre: TcxTextEdit;
+    procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+    procedure btnAceptarClick(Sender: TObject);
+  private
+    { Private declarations }
+    
+    Error : boolean;
+    ObjID : integer;
+
+    procedure Load;
+    procedure Save;
+  public
+    { Public declarations }
+
+    function Edit(aObjID : integer) : boolean;
+  end;
+
+var
+  frmMunicipio: TfrmMunicipio;
+
+implementation
+
+uses fClientDataModule;
+
+{$R *.dfm}
+
+  procedure TfrmMunicipio.Load;
+  begin
+    with ClientDataModule, tbl_Municipio do
+      begin
+        Close;
+        Open;
+
+        if not Locate('ID', VarArrayOf([ObjID]), [])
+          then Abort;
+
+        txtNombre.Text     := FieldByName('Nombre'    ).AsString;
+      end;
+  end;
+
+  procedure TfrmMunicipio.Save;
+  begin
+    with ClientDataModule, tbl_Municipio do
+      begin
+        Edit;
+          FieldByName('Nombre'    ).AsString := txtNombre.Text;
+        Post;
+
+        ApplyUpdates(false);
+      end;
+  end;
+
+  function TfrmMunicipio.Edit(aObjID : integer) : boolean;
+  begin
+    ObjID := aObjID;
+    Load;
+    Result := ShowModal = mrOk;
+    if Result
+      then Save;
+  end;
+
+  procedure TfrmMunicipio.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+  begin
+    CanClose := (ModalResult = mrCancel) or not Error;
+  end;
+
+  procedure TfrmMunicipio.btnAceptarClick(Sender: TObject);
+  begin
+    Error := true;
+
+    if VarIsNull(txtNombre.EditValue)
+      then
+        begin
+          MessageDlg('El municipio necesita un nombre', mtError, [mbOk], 0);
+          txtNombre.SetFocus;
+          Exit;
+        end;
+
+    Error := false;
+  end;
+
+end.

@@ -1,0 +1,21 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = GoliathTAProject.exe GoliathTAProjectClient.exe 
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+GoliathTAProject.exe: GoliathTAProject.dpr
+  $(DCC)
+
+GoliathTAProjectClient.exe: GoliathTAProjectClient.dpr
+  $(DCC)

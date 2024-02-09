@@ -1,0 +1,15 @@
+<Library Name="GoliathTALibrary" UID="{6D0793BF-3DF4-4DA5-838E-8F4DC7B69A28}">
+  <Services>
+    <Service Name="GoliathTAService" UID="{03601704-05A0-42C1-B232-A9B531CE34E5}" Ancestor="DataAbstractService">
+      <Interfaces>
+         <Interface Name="Default" UID="{9D9764E2-F8C0-49AE-ABB9-015CB74CFAC9}">
+            <Operations>
+            </Operations>
+         </Interface>
+      </Interfaces>
+    </Service>
+  </Services>
+  <Uses>
+     <Use Name="DataAbstract" UID="{CAA10EB2-7CA1-41F3-90DF-671BA50C7C20}" Rodl="$(Data Abstract for Delphi)\Source\DataAbstract4.RODL" />
+  </Uses>
+</Library>

@@ -1,0 +1,112 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{3741f375-0a34-4b5c-8e5b-db1f58c66f68}</ProjectGuid>
+    <MainSource>GoliathTAClient.dpr</MainSource>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>GoliathTAClient.exe</DCC_DependencyCheckOutputName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_Define>RELEASE</DCC_Define>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_Define>DEBUG</DCC_Define>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+<BorlandProject><Delphi.Personality><Parameters><Parameters Name="UseLauncher">False</Parameters><Parameters Name="LoadAllSymbols">True</Parameters><Parameters Name="LoadUnspecifiedSymbols">False</Parameters></Parameters><VersionInfo><VersionInfo Name="IncludeVerInfo">False</VersionInfo><VersionInfo Name="AutoIncBuild">False</VersionInfo><VersionInfo Name="MajorVer">1</VersionInfo><VersionInfo Name="MinorVer">0</VersionInfo><VersionInfo Name="Release">0</VersionInfo><VersionInfo Name="Build">0</VersionInfo><VersionInfo Name="Debug">False</VersionInfo><VersionInfo Name="PreRelease">False</VersionInfo><VersionInfo Name="Special">False</VersionInfo><VersionInfo Name="Private">False</VersionInfo><VersionInfo Name="DLL">False</VersionInfo><VersionInfo Name="Locale">1033</VersionInfo><VersionInfo Name="CodePage">1252</VersionInfo></VersionInfo><VersionInfoKeys><VersionInfoKeys Name="CompanyName"></VersionInfoKeys><VersionInfoKeys Name="FileDescription"></VersionInfoKeys><VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="InternalName"></VersionInfoKeys><VersionInfoKeys Name="LegalCopyright"></VersionInfoKeys><VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys><VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys><VersionInfoKeys Name="ProductName"></VersionInfoKeys><VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="Comments"></VersionInfoKeys></VersionInfoKeys><Source><Source Name="MainSource">GoliathTAClient.dpr</Source></Source></Delphi.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+  <ItemGroup>
+    <DelphiCompile Include="GoliathTAClient.dpr">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="fClientDataModule.pas">
+      <Form>ClientDataModule</Form>
+      <DesignClass>TDAClientDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="fClientForm.pas">
+      <Form>ClientForm</Form>
+    </DCCReference>
+    <DCCReference Include="fDepartamento.pas">
+      <Form>frmDepartamento</Form>
+    </DCCReference>
+    <DCCReference Include="fExcepcion.pas">
+      <Form>frmExcepcion</Form>
+    </DCCReference>
+    <DCCReference Include="fFeriado.pas">
+      <Form>frmFeriado</Form>
+    </DCCReference>
+    <DCCReference Include="fHorario.pas">
+      <Form>frmHorario</Form>
+    </DCCReference>
+    <DCCReference Include="fJornada.pas">
+      <Form>frmJornada</Form>
+    </DCCReference>
+    <DCCReference Include="fMunicipio.pas">
+      <Form>frmMunicipio</Form>
+    </DCCReference>
+    <DCCReference Include="fNomina.pas">
+      <Form>frmNomina</Form>
+    </DCCReference>
+    <DCCReference Include="fOperador.pas">
+      <Form>frmOperador</Form>
+    </DCCReference>
+    <DCCReference Include="frameConfig.pas">
+      <Form>frmConfig</Form>
+      <DesignClass>TFrame</DesignClass>
+    </DCCReference>
+    <DCCReference Include="frameDptoByDay.pas">
+      <Form>frmDptoByDay</Form>
+      <DesignClass>TFrame</DesignClass>
+    </DCCReference>
+    <DCCReference Include="frameDptoByPayroll.pas">
+      <Form>frmDptoByPayroll</Form>
+      <DesignClass>TFrame</DesignClass>
+    </DCCReference>
+    <DCCReference Include="frameDptoByWeek.pas">
+      <Form>frmDptoByWeek</Form>
+      <DesignClass>TFrame</DesignClass>
+    </DCCReference>
+    <DCCReference Include="frameLogon.pas">
+      <Form>frmLogon</Form>
+      <DesignClass>TFrame</DesignClass>
+    </DCCReference>
+    <DCCReference Include="frameNewDevices.pas">
+      <Form>frmNewDevices</Form>
+      <DesignClass>TFrame</DesignClass>
+    </DCCReference>
+    <DCCReference Include="frameNewUsers.pas">
+      <Form>frmNewUsers</Form>
+      <DesignClass>TFrame</DesignClass>
+    </DCCReference>
+    <DCCReference Include="frameNominaFacts.pas">
+      <Form>frmNominaFacts</Form>
+      <DesignClass>TFrame</DesignClass>
+    </DCCReference>
+    <DCCReference Include="framePivotNomina.pas">
+      <Form>frmPivotNomina</Form>
+      <DesignClass>TFrame</DesignClass>
+    </DCCReference>
+    <DCCReference Include="frameResultadosPendientes.pas">
+      <Form>frmResultadosPendientes</Form>
+      <DesignClass>TFrame</DesignClass>
+    </DCCReference>
+    <DCCReference Include="fSitio.pas">
+      <Form>frmSitio</Form>
+    </DCCReference>
+    <DCCReference Include="fTrabajador.pas">
+      <Form>frmTrabajador</Form>
+    </DCCReference>
+    <DCCReference Include="GoliathTALibrary_Intf.pas" />
+    <None Include="GoliathTAClient.INI" />
+  </ItemGroup>
+</Project>
